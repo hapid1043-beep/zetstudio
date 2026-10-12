@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zet Studio · Roblox Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">ZET<span>STUDIO</span></div>
+    <nav>
+      <a href="#library">Library</a>
+      <a href="#upload">Unggah</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Roblox Asset Vault</p>
+      <h1>Simpan, bagikan, unduh.</h1>
+      <p class="lead">Kumpulan file .rbxm, ID Toolbox, dan ID Upload Roblox dalam satu tempat yang bisa diakses siapa saja.</p>
+    </section>
+
+    <section id="library" class="panel">
+      <div class="toolbar">
+        <div class="tabs">
+          <button class="tab active" data-filter="all">Semua</button>
+          <button class="tab" data-filter="rbxm">File .rbxm</button>
+          <button class="tab" data-filter="toolbox">Toolbox ID</button>
+          <button class="tab" data-filter="upload">Upload ID</button>
+        </div>
+        <input id="search" type="search" placeholder="Cari judul atau deskripsi...">
+      </div>
+      <div id="grid" class="grid"></div>
+      <p id="empty" class="empty hidden">Belum ada item.</p>
+    </section>
+
+    <section id="upload" class="panel">
+      <h2>Unggah</h2>
+      <form id="form" class="form">
+        <div class="field">
+          <label for="kind">Jenis</label>
+          <select name="kind" id="kind">
+            <option value="rbxm">File .rbxm / .rbxmx</option>
+            <option value="toolbox">ID Toolbox</option>
+            <option value="upload">ID Upload (Asset)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="title">Judul</label>
+          <input id="title" name="title" required maxlength="120" placeholder="Nama item">
+        </div>
+        <div class="field">
+          <label for="description">Deskripsi</label>
+          <textarea id="description" name="description" maxlength="1000" rows="3" placeholder="Opsional"></textarea>
+        </div>
+        <div class="field" id="fileField">
+          <label for="file">File</label>
+          <input type="file" id="file" name="file" accept=".rbxm,.rbxmx">
+        </div>
+        <div class="field hidden" id="idField">
+          <label for="assetId">ID atau link Roblox</label>
+          <input id="assetId" name="assetId" placeholder="contoh: 123456789">
+        </div>
+        <button type="submit" class="btn">Simpan</button>
+        <p id="msg" class="msg"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>© Zet Studio</footer>
+  <script src="/app.js"></script>
+</body>
+</html>
